@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   async rewrites() {
-    const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
-    if (!apiBase) return [];
+    const apiBase =
+      process.env.NEXT_PUBLIC_API_BASE_URL ||
+      "https://personal-agent-backend.mohammedaminu.com";
     return [
       {
         source: "/api/:path*",
